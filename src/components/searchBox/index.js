@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Autosuggest from 'react-autosuggest';
 
 import styles from './styles.css';
 import SearchField from './searchField';
@@ -13,7 +12,7 @@ class SearchBox extends Component {
             return (
                 <div className={styles.desktopContainer}>
                     <span className={styles.searchBoxHeader}>
-                        How's the weather in...
+                        {'How\'s the weather in...'}
                     </span>
                     <SearchField />
                 </div>

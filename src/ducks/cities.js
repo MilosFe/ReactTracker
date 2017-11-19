@@ -6,4 +6,3 @@ const initialState = {
 
 export default createReducer({
 }, initialState);
-

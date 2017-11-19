@@ -31,6 +31,10 @@ class App extends Component {
     }
 }
 
+App.propTypes = {
+    isDesktop: PropTypes.bool.isRequired
+};
+
 const mapScreenSizeToProps = (screenSize) => ({
     isDesktop: screenSize['> mobile']
 });

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 
 import theme from './autosuggestTheme.css';
@@ -23,7 +22,7 @@ class SearchField extends Component {
         this.state = {
             value: '',
             suggestions: []
-        }
+        };
     }
 
     render() {
@@ -79,8 +78,5 @@ class SearchField extends Component {
         });
     };
 }
-
-SearchField.propTypes = {
-};
 
 export default SearchField;
