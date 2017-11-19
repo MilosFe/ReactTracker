@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Autosuggest from 'react-autosuggest';
 
 import styles from './styles.css';
+import SearchField from './searchField';
 
 class SearchBox extends Component {
     render() {
@@ -13,6 +15,7 @@ class SearchBox extends Component {
                     <span className={styles.searchBoxHeader}>
                         How's the weather in...
                     </span>
+                    <SearchField />
                 </div>
             );
         }

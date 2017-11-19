@@ -1,0 +1,14 @@
+.container {
+}
+.input {
+    width: 200px;
+    height: 30px;
+    font-size: var(--font1);
+}
+
+.suggestionsContainer {
+    width: 200px;
+}
+.suggestionsContainer { }
+.suggestion { }
+.suggestionHighlighted { }
