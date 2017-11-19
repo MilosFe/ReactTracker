@@ -1,5 +1,9 @@
 @import '../variables.css';
 
+/* 
+ * Theme derived mainly from the examples given on http://react-autosuggest.js.org/
+ */
+
 .react-autosuggest__container {
     position: relative;
 }
