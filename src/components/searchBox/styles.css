@@ -19,4 +19,22 @@
 .searchBoxHeader {
 	font-family: 'Pacifico', cursive;
 	font-size: var(--font2);
+	margin-top: 50px;
+}
+
+.inputContainer {
+	position: relative;
+}
+
+.inputPrompt {
+	position: absolute;
+	top: 6px;
+	left: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: var(--font1);
+	font-weight: bold;
+}
+
+.input {
+	padding-left: 20px;
 }

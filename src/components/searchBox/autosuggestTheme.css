@@ -1,6 +1,6 @@
 @import '../variables.css';
 
-/* 
+/*
  * Theme derived mainly from the examples given on http://react-autosuggest.js.org/
  */
 
@@ -12,7 +12,7 @@
     display: block;
     width: 282px;
     height: 30px;
-    padding: 10px 20px;
+    padding: 10px 20px 10px 80px;
     font-family: 'Lato', sans-serif;
     font-size: var(--font1);
     border: 1px solid #aaa;

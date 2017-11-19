@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 
 import theme from './autosuggestTheme.css';
+import styles from './styles.css';
 import { fetchSuggestions } from '../../api';
-import Suggestion from './suggestion';
 
 const getSuggestionValue = (suggestion) => suggestion;
 
 const renderSuggestion = (suggestion) => {
     return (
-        <Suggestion suggestion={suggestion} />
+        <div>
+            {suggestion}
+        </div>
     );
 };
 
@@ -39,9 +41,19 @@ class SearchField extends Component {
                 onSuggestionsClearRequested={this.onSuggestionsClearRequested.bind(this)}
                 getSuggestionValue={getSuggestionValue}
                 renderSuggestion={renderSuggestion}
+                renderInputComponent={this.renderInputComponent}
                 inputProps={inputProps}
                 theme={theme}
             />
+        );
+    }
+
+    renderInputComponent(inputProps) {
+        return (
+            <div className={styles.inputContainer}>
+                <input {...inputProps} />
+                <span className={styles.inputPrompt}>Location: </span>
+            </div>
         );
     }
 
