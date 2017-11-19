@@ -1,0 +1,10 @@
+.desktopContainer {
+    height: 100%;
+    width: 100%;
+    background-image:
+        linear-gradient(
+            to bottom right,
+            #F7F4D7 30%, 
+            #AFD5E1
+        );
+}
