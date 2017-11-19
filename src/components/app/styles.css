@@ -7,6 +7,7 @@ body {
 .desktopContainer {
     height: 100%;
     width: 100%;
+    display: flex;
     background-image:
         linear-gradient(
             to bottom right,
@@ -23,4 +24,8 @@ body {
             var(--light-blue),
             var(--light-yellow) 30%
         );
+}
+
+.logo {
+    margin: 60px auto;
 }

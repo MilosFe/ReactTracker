@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 
 class Logo extends Component {
     render() {
-        return null;
+        const { className } = this.props;
+
+        return (
+            <div className={className}>
+                <img src="public/doctrin_logo.png" />
+            </div>
+        );
     }
 }
 
