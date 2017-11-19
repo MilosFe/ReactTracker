@@ -21,10 +21,10 @@ var config = {
 						loader: 'css-loader',
 						options: {
 							camelCase: true,
-							modules: true
+							modules: true,
+							localIdentName: '[name]-[local]-[hash:base64:5]'
 						}
 					}
-
 				]
 			},
 			{

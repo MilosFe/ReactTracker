@@ -1,0 +1,23 @@
+@import '../variables.css';
+
+.desktopContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	width: 400px;
+	height: 200px;
+	border: 1px solid var(--white);
+	background-image:
+        linear-gradient(
+            to right,
+            var(--light-grey1),
+            var(--light-grey2)
+        );
+}
+
+.searchBoxHeader {
+	font-family: 'Pacifico', cursive;
+	font-size: var(--font2);
+}

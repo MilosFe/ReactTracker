@@ -15,7 +15,7 @@ class App extends Component {
             return (
                 <div className={styles.desktopContainer}>
                     <Logo className={styles.logo} />
-                    <SearchBox />
+                    <SearchBox isDesktop={isDesktop} />
                     <CityList />
                 </div>
             );
@@ -23,7 +23,7 @@ class App extends Component {
 
         return (
             <div className={styles.mobileContainer}>
-                <SearchBox />
+                <SearchBox isDesktop={isDesktop} />
                 <CityList />
                 <Logo className={styles.logo} />
             </div>
