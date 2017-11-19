@@ -1,3 +1,5 @@
+@import '../variables.css';
+
 body {
     margin: 0;
 }
@@ -8,7 +10,17 @@ body {
     background-image:
         linear-gradient(
             to bottom right,
-            #F7F4D7 30%, 
-            #AFD5E1
+            var(--light-yellow) 30%, 
+            var(--light-blue)
+        );
+}
+
+.mobileContainer {
+    height: 100%;
+    width: 100%;
+    background-image:
+        linear-gradient(
+            var(--light-blue),
+            var(--light-yellow) 30%
         );
 }

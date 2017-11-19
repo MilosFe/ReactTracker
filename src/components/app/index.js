@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connectScreenSize } from 'react-screen-size';
 
 import styles from './styles.css';
 import Logo from '../logo';
@@ -8,14 +9,30 @@ import CityList from '../cityList';
 
 class App extends Component {
     render() {
+        const { isDesktop } = this.props;
+
+        if (isDesktop) {
+            return (
+                <div className={styles.desktopContainer}>
+                    <Logo />
+                    <SearchBox />
+                    <CityList />
+                </div>
+            );
+        }
+
         return (
-            <div className={styles.desktopContainer}>
-                <Logo />
+            <div className={styles.mobileContainer}>
                 <SearchBox />
                 <CityList />
+                <Logo />
             </div>
         );
     }
 }
 
-export default App;
+const mapScreenSizeToProps = (screenSize) => ({
+    isDesktop: screenSize['> mobile']
+});
+
+export default connectScreenSize(mapScreenSizeToProps)(App);
