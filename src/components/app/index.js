@@ -14,7 +14,7 @@ class App extends Component {
         if (isDesktop) {
             return (
                 <div className={styles.desktopContainer}>
-                    <Logo />
+                    <Logo className={styles.logo} />
                     <SearchBox />
                     <CityList />
                 </div>
@@ -25,7 +25,7 @@ class App extends Component {
             <div className={styles.mobileContainer}>
                 <SearchBox />
                 <CityList />
-                <Logo />
+                <Logo className={styles.logo} />
             </div>
         );
     }
