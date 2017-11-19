@@ -13,4 +13,8 @@ class Logo extends Component {
     }
 }
 
+Logo.propTypes = {
+    className: PropTypes.string
+};
+
 export default Logo;

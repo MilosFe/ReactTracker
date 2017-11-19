@@ -1,4 +1,13 @@
 :root {
     --light-yellow: #F7F4D7;
     --light-blue: #AFD5E1;
+    --light-grey1: #FCFAEE;
+    --light-grey2: #EBEEE7;
+    --light-grey3: #F1F6EF;
+    --white: white;
+}
+
+:root {
+    --font1: 16px;
+    --font2: 24px;
 }

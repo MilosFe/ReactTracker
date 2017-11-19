@@ -8,10 +8,11 @@ body {
     height: 100%;
     width: 100%;
     display: flex;
+    flex-direction: column;
     background-image:
         linear-gradient(
             to bottom right,
-            var(--light-yellow) 30%, 
+            var(--light-yellow) 30%,
             var(--light-blue)
         );
 }
@@ -19,6 +20,8 @@ body {
 .mobileContainer {
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
     background-image:
         linear-gradient(
             var(--light-blue),
