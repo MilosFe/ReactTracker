@@ -22,9 +22,11 @@ var config = {
 						options: {
 							camelCase: true,
 							modules: true,
+							importLoaders: 1,
 							localIdentName: '[name]-[local]-[hash:base64:5]'
 						}
-					}
+					},
+					'postcss-loader'
 				]
 			},
 			{
