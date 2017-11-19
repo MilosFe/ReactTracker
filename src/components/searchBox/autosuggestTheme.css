@@ -4,7 +4,7 @@
  * Theme derived mainly from the examples given on http://react-autosuggest.js.org/
  */
 
-.react-autosuggest__container {
+.container {
     position: relative;
 }
 
@@ -33,6 +33,7 @@
 }
 
 .suggestionsContainerOpen {
+    position: relative;
     display: block;
     width: 280px;
     border: 1px solid #aaa;
