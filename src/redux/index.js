@@ -1,3 +1,3 @@
-import cities from './cities';
+import weatherReports from './weatherReports';
 
-export default cities;
+export default weatherReports;

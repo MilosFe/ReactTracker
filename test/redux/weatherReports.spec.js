@@ -1,8 +1,8 @@
 import { merge } from 'lodash';
 
-import citiesReducer from '../../src/redux/cities';
+import weatherReportsReducer from '../../src/redux/weatherReports';
 
-describe('cities reducer', () => {
+describe('weather reports reducer', () => {
     const london = {
         location: {
             name: 'London',
@@ -24,18 +24,18 @@ describe('cities reducer', () => {
     };
 
 
-    it('should add new cities to the start of the list', () => {
+    it('should add new reports to the start of the list', () => {
         const initialState = {
-            cities: [london]
+            reports: [london]
         };
 
-        const newState = citiesReducer(initialState, {
+        const newState = weatherReportsReducer(initialState, {
             type: 'FETCH_CURRENT_WEATHER_SUCCESS',
             payload: stockholm
         });
 
         expect(newState).to.deep.equal({
-            cities: [stockholm, london]
+            reports: [stockholm, london]
         });
     });
 
@@ -47,16 +47,16 @@ describe('cities reducer', () => {
         });
 
         const initialState = {
-            cities: [london, stockholm]
+            reports: [london, stockholm]
         };
 
-        const newState = citiesReducer(initialState, {
+        const newState = weatherReportsReducer(initialState, {
             type: 'FETCH_CURRENT_WEATHER_SUCCESS',
             payload: stockholmNew
         });
 
         expect(newState).to.deep.equal({
-            cities: [stockholmNew, london]
+            reports: [stockholmNew, london]
         });
     });
 
@@ -68,16 +68,16 @@ describe('cities reducer', () => {
         });
 
         const initialState = {
-            cities: [london]
+            reports: [london]
         };
 
-        const newState = citiesReducer(initialState, {
+        const newState = weatherReportsReducer(initialState, {
             type: 'FETCH_CURRENT_WEATHER_SUCCESS',
             payload: londonOntario
         });
 
         expect(newState).to.deep.equal({
-            cities: [londonOntario, london]
+            reports: [londonOntario, london]
         });
     });
 });

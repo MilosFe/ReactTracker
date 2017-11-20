@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class CityList extends Component {
+class ReportList extends Component {
     render() {
         return null;
     }
 }
 
-export default CityList;
+export default ReportList;
