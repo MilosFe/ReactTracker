@@ -6,10 +6,11 @@ import styles from './styles.css';
 
 class Report extends Component {
     render() {
-        const { color, report } = this.props;
+        const { cardSize, color, report } = this.props;
 
         return (
             <div className={classnames(styles.reportContainer, color)}>
+                <img className={styles.smallIcon} src="/public/2.svg" />
                 {report.location.name}
             </div>
         );
@@ -18,6 +19,7 @@ class Report extends Component {
 }
 
 Report.propTypes = {
+    cardSize: PropTypes.oneOf(['sm', 'lg']),
     color: PropTypes.string,
     report: PropTypes.shape({
         location: PropTypes.shape({
