@@ -6,13 +6,17 @@
     --lightGrey2: #EBEEE7;
     --lightGrey3: #F1F6EF;
     --white: white;
+    --offWhite: #E2E2E4; /* Meteocon icon inversion gives this color */
     --darkOrange: #E99866;
     --lightOrange: #E3B168;
     --brightBlue: #88DBEF;
 }
 
 :root {
-    --font1: 16px;
-    --font2: 20px;
-    --font3: 24px;
+    --font-1: 10px;
+    --font1: 14px;
+    --font2: 16px;
+    --font3: 20px;
+    --font4: 24px;
+    --font5: 32px;
 }
