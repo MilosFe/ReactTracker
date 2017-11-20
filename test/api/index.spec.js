@@ -1,29 +1,80 @@
 import axios from 'axios';
 import sinon from 'sinon';
 
-import * as api from '../../src/api';
+import { fetchSuggestions, fetchCurrentWeather } from '../../src/api';
 
 describe('api', () => {
-    beforeEach(() => {
-        sinon.stub(axios, 'get').returns(Promise.resolve({
-            data: [{
-                name: 'Midgard'
-            }, {
-                name: 'Asgard'
-            }]
-        }));
+    describe('fetchSuggestions', () => {
+        beforeEach(() => {
+            sinon.stub(axios, 'get').returns(Promise.resolve({
+                data: [{
+                    name: 'Midgard'
+                }, {
+                    name: 'Asgard'
+                }]
+            }));
+        });
+
+        afterEach(() => {
+            axios.get.restore();
+        });
+
+        it('should fetch city name suggestions', (done) => {
+            fetchSuggestions('gard')
+                .then((suggestions) => {
+                    expect(suggestions).to.deep.equal(['Midgard', 'Asgard']);
+
+                    done();
+                }).catch(done);
+        });
     });
 
-    afterEach(() => {
-        axios.get.restore();
-    });
+    describe('fetchCurrentWeather', () => {
+        beforeEach(() => {
+            sinon.stub(axios, 'get').returns(Promise.resolve({
+                data: {
+                    location: {
+                        name: 'London',
+                        country: 'United Kingdom'
+                    },
+                    current: {
+                        temp_c: 20,
+                        temp_f: 68,
+                        is_day: 1,
+                        condition: {
+                            text: 'Sunny'
+                        },
+                        wind_kph: 4.3,
+                        cloud: 0
+                    }
+                }
+            }));
+        });
 
-    it('should fetch city name suggestions', (done) => {
-        api.fetchSuggestions('gard')
-            .then((suggestions) => {
-                expect(suggestions).to.deep.equal(['Midgard', 'Asgard']);
+        afterEach(() => {
+            axios.get.restore();
+        });
 
-                done();
-            }).catch(done);
+        it('should fetch current weather for a city', (done) => {
+            fetchCurrentWeather('London')
+                .then((weatherReport) => {
+                    expect(weatherReport).to.deep.equal({
+                        location: {
+                            name: 'London',
+                            country: 'United Kingdom'
+                        },
+                        weather: {
+                            tempC: 20,
+                            tempF: 68,
+                            isDay: true,
+                            condition: 'Sunny',
+                            windKph: 4.3,
+                            cloud: false
+                        }
+                    });
+
+                    done();
+                }).catch(done);
+        });
     });
 });
