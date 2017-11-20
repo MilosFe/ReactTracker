@@ -9,9 +9,9 @@ import SearchBox from '../searchBox';
 import ReportList from '../reportList';
 import { fetchWeatherReport } from '../../redux/weatherReports';
 
-const ReportListContainer = connect((state) => {
+const ReportListContainer = connect((state) => ({
     reports: state.reports
-}, {
+}), {
     fetchWeatherReport
 })(ReportList);
 
@@ -41,20 +41,6 @@ class App extends Component {
 
 App.propTypes = {
     isDesktop: PropTypes.bool.isRequired,
-    reports: PropTypes.arrayOf(PropTypes.shape({
-        location: PropTypes.shape({
-            name: PropTypes.string,
-            country: PropTypes.string
-        }),
-        weather: PropTypes.shape({
-            tempC: PropTypes.number,
-            tempF: PropTypes.number,
-            isDay: PropTypes.bool,
-            condition: PropTypes.string,
-            windKph: PropTypes.number,
-            cloud: PropTypes.bool
-        })
-    }))
 };
 
 const mapScreenSizeToProps = (screenSize) => ({
