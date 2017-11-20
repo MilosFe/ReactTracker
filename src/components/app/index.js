@@ -11,9 +11,11 @@ import { fetchWeatherReport } from '../../redux/weatherReports';
 
 const ReportListContainer = connect((state) => ({
     reports: state.reports
-}), {
+}))(ReportList);
+
+const SearchBoxContainer = connect((state) => ({}), {
     fetchWeatherReport
-})(ReportList);
+})(SearchBox);
 
 class App extends Component {
     render() {
@@ -23,7 +25,7 @@ class App extends Component {
             return (
                 <div className={styles.desktopContainer}>
                     <Logo className={styles.logo} />
-                    <SearchBox isDesktop={isDesktop} />
+                    <SearchBoxContainer isDesktop={isDesktop} />
                     <ReportListContainer />
                 </div>
             );
@@ -31,7 +33,7 @@ class App extends Component {
 
         return (
             <div className={styles.mobileContainer}>
-                <SearchBox isDesktop={isDesktop} />
+                <SearchBoxContainer isDesktop={isDesktop} />
                 <ReportListContainer />
                 <Logo className={styles.logo} />
             </div>

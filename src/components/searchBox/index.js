@@ -7,7 +7,7 @@ import SearchField from './searchField';
 
 class SearchBox extends Component {
     render() {
-        const { isDesktop } = this.props;
+        const { fetchWeatherReport, isDesktop } = this.props;
 
         return (
             <div className={classnames({
@@ -17,14 +17,18 @@ class SearchBox extends Component {
                 <span className={styles.searchBoxHeader}>
                     {'How\'s the weather in...'}
                 </span>
-                <SearchField isDesktop={isDesktop} />
+                <SearchField
+                    isDesktop={isDesktop}
+                    fetchWeatherReport={fetchWeatherReport}
+                />
             </div>
         );
     }
 }
 
 SearchBox.propTypes = {
-    isDesktop: PropTypes.bool
+    isDesktop: PropTypes.bool,
+    fetchWeatherReport: PropTypes.func
 };
 
 export default SearchBox;

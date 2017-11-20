@@ -9,7 +9,7 @@ class Report extends Component {
 
         return (
             <div className={styles.reportContainer}>
-
+                {report.location.name}
             </div>
         );
 

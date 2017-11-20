@@ -126,14 +126,12 @@
 }
 
 .smallInputIcon {
-    pointer-events: none;
     position: absolute;
     top: 8px;
     right: 15px;
 }
 
 .largeInputIcon {
-    pointer-events: none;
     position: absolute;
     top: 14px;
     right: 15px;

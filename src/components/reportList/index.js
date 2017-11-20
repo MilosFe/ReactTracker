@@ -12,7 +12,10 @@ class ReportList extends Component {
             <div className={styles.reportListContainer}>
                 {reports.map((report) => {
                     return (
-                        <Report report={report} />
+                        <Report
+                            key={`${report.location.name}${report.location.country}`}
+                            report={report}
+                        />
                     );
                 })}
             </div>
