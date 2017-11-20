@@ -58,7 +58,10 @@ class SearchField extends Component {
                 [styles.largeInputContainer]: !isDesktop
             })}>
                 <input {...inputProps} />
-                <span className={styles.inputPrompt}>Location: </span>
+                <span className={classnames({
+                    [styles.smallInputPrompt]: isDesktop,
+                    [styles.largeInputPrompt]: !isDesktop
+                })}>Location: </span>
             </div>
         );
     }

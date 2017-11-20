@@ -33,7 +33,7 @@
 
 .searchBoxHeader {
     font-family: 'Pacifico', cursive;
-    font-size: var(--font2);
+    font-size: var(--font3);
     margin-top: 35px;
 }
 
@@ -42,6 +42,8 @@
     height: 30px;
     margin: 0 auto;
     position: relative;
+    font-family: 'Lato', sans-serif;
+    font-size: var(--font1);
 }
 
 .largeInputContainer {
@@ -49,6 +51,16 @@
     height: 50px;
     margin: 0 auto;
     position: relative;
+    font-family: 'Lato', sans-serif;
+    font-size: var(--font2);
+}
+
+.smallInputContainer input {
+    padding: 0px 20px 0px 85px;
+}
+
+.largeInputContainer input {
+    padding: 0px 20px 0px 100px;
 }
 
 .inputLongShadow {
@@ -97,11 +109,16 @@
     var(--light-grey2) 43px 43px;
 }
 
-.inputPrompt {
+.smallInputPrompt {
     position: absolute;
     top: 6px;
     left: 10px;
-    font-family: 'Lato', sans-serif;
-    font-size: var(--font1);
+    font-weight: bold;
+}
+
+.largeInputPrompt {
+    position: absolute;
+    top: 13px;
+    left: 10px;
     font-weight: bold;
 }
