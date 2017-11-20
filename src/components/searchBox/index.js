@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import styles from './styles.css';
 import SearchField from './searchField';
@@ -8,16 +9,17 @@ class SearchBox extends Component {
     render() {
         const { isDesktop } = this.props;
 
-        if (isDesktop) {
-            return (
-                <div className={styles.desktopContainer}>
-                    <span className={styles.searchBoxHeader}>
-                        {'How\'s the weather in...'}
-                    </span>
-                    <SearchField />
-                </div>
-            );
-        }
+        return (
+            <div className={classnames({
+                [styles.desktopContainer]: isDesktop,
+                [styles.mobileContainer]: !isDesktop
+            })}>
+                <span className={styles.searchBoxHeader}>
+                    {'How\'s the weather in...'}
+                </span>
+                <SearchField isDesktop={isDesktop} />
+            </div>
+        );
     }
 }
 

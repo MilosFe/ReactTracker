@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
+import classnames from 'classnames';
 
 import theme from './autosuggestTheme.css';
 import styles from './styles.css';
@@ -27,11 +28,20 @@ class SearchField extends Component {
 
     render() {
         const { value, suggestions } = this.state;
+        const { isDesktop } = this.props;
 
         const inputProps = {
             value,
             onChange: this.onChange.bind(this)
         };
+
+        const modifiedTheme = Object.assign({}, theme, {
+            suggestionsContainerOpen: classnames({
+                [theme.suggestionsContainerOpen]: true,
+                [theme.suggestionsContainerOpenLarge]: !isDesktop,
+                [theme.suggestionsContainerOpenSmall]: isDesktop
+            })
+        });
 
         return (
             <Autosuggest
@@ -40,18 +50,33 @@ class SearchField extends Component {
                 onSuggestionsClearRequested={this.onSuggestionsClearRequested.bind(this)}
                 getSuggestionValue={getSuggestionValue}
                 renderSuggestion={renderSuggestion}
-                renderInputComponent={this.renderInputComponent}
+                renderInputComponent={this.renderInputComponent.bind(this)}
                 inputProps={inputProps}
-                theme={theme}
+                theme={modifiedTheme}
             />
         );
     }
 
     renderInputComponent(inputProps) {
+        const { isDesktop } = this.props;
+
+        const plusIconSize = isDesktop ? 16 : 24;
+
         return (
-            <div className={styles.inputContainer}>
+            <div className={classnames({
+                [styles.inputLongShadow]: isDesktop,
+                [styles.smallInputContainer]: isDesktop,
+                [styles.largeInputContainer]: !isDesktop
+            })}>
                 <input {...inputProps} />
-                <span className={styles.inputPrompt}>Location: </span>
+                <span className={classnames({
+                    [styles.smallInputPrompt]: isDesktop,
+                    [styles.largeInputPrompt]: !isDesktop
+                })}>Location: </span>
+                <img className={classnames({
+                    [styles.smallInputIcon]: isDesktop,
+                    [styles.largeInputIcon]: !isDesktop
+                })} src={`/public/plus-${plusIconSize}.png`} />
             </div>
         );
     }

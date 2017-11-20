@@ -1,14 +1,14 @@
 @import '../variables.css';
 
 .desktopContainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 0 auto;
-	width: 368px;
-	height: 150px;
-	border: 1px solid var(--white);
-	background-image:
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 368px;
+    height: 150px;
+    border: 1px solid var(--white);
+    background-image:
         linear-gradient(
             to right,
             var(--light-grey1),
@@ -16,14 +16,54 @@
         );
 }
 
-.searchBoxHeader {
-	font-family: 'Pacifico', cursive;
-	font-size: var(--font2);
-	margin-top: 35px;
+.mobileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 150px;
+    border-bottom: 1px solid var(--white);
+    background-image:
+        linear-gradient(
+            var(--light-blue-grey),
+            var(--light-grey3)
+        );
 }
 
-.inputContainer {
-	position: relative;
+.searchBoxHeader {
+    font-family: 'Pacifico', cursive;
+    font-size: var(--font3);
+    margin-top: 35px;
+}
+
+.smallInputContainer {
+    width: 282px;
+    height: 30px;
+    margin: 0 auto;
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    font-size: var(--font1);
+}
+
+.largeInputContainer {
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    font-size: var(--font2);
+}
+
+.smallInputContainer input {
+    padding: 0px 35px 0px 85px;
+}
+
+.largeInputContainer input {
+    padding: 0px 50px 0px 100px;
+}
+
+.inputLongShadow {
     box-shadow: var(--light-grey2) 1px 1px,
     var(--light-grey2) 2px 2px,
     var(--light-grey2) 3px 3px,
@@ -69,11 +109,32 @@
     var(--light-grey2) 43px 43px;
 }
 
-.inputPrompt {
-	position: absolute;
-	top: 6px;
-	left: 10px;
-    font-family: 'Lato', sans-serif;
-    font-size: var(--font1);
-	font-weight: bold;
+.smallInputPrompt {
+    pointer-events: none;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    font-weight: bold;
+}
+
+.largeInputPrompt {
+    pointer-events: none;
+    position: absolute;
+    top: 13px;
+    left: 10px;
+    font-weight: bold;
+}
+
+.smallInputIcon {
+    pointer-events: none;
+    position: absolute;
+    top: 8px;
+    right: 15px;
+}
+
+.largeInputIcon {
+    pointer-events: none;
+    position: absolute;
+    top: 14px;
+    right: 15px;
 }
