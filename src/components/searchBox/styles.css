@@ -110,6 +110,7 @@
 }
 
 .smallInputPrompt {
+    pointer-events: none;
     position: absolute;
     top: 6px;
     left: 10px;
@@ -117,6 +118,7 @@
 }
 
 .largeInputPrompt {
+    pointer-events: none;
     position: absolute;
     top: 13px;
     left: 10px;
@@ -124,12 +126,14 @@
 }
 
 .smallInputIcon {
+    pointer-events: none;
     position: absolute;
     top: 8px;
     right: 15px;
 }
 
 .largeInputIcon {
+    pointer-events: none;
     position: absolute;
     top: 14px;
     right: 15px;
