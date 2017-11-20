@@ -68,8 +68,7 @@ describe('api', () => {
                             tempF: 68,
                             isDay: true,
                             condition: 'Sunny',
-                            windKph: 4.3,
-                            cloud: false
+                            windKph: 4.3
                         }
                     });
 

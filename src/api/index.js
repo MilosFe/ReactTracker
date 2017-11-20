@@ -22,8 +22,7 @@ export const fetchCurrentWeather = (cityName) => {
                 tempF: current.temp_f,
                 isDay: !!current.is_day,
                 condition: current.condition.text,
-                windKph: current.wind_kph,
-                cloud: !!current.cloud
+                windKph: current.wind_kph
             }
         }
     });

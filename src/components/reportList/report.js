@@ -48,8 +48,7 @@ Report.propTypes = {
             tempF: PropTypes.number,
             isDay: PropTypes.bool,
             condition: PropTypes.string,
-            windKph: PropTypes.number,
-            cloud: PropTypes.bool
+            windKph: PropTypes.number
         })
     })
 }
