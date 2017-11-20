@@ -60,6 +60,8 @@ class SearchField extends Component {
     renderInputComponent(inputProps) {
         const { isDesktop } = this.props;
 
+        const plusIconSize = isDesktop ? 16 : 24;
+
         return (
             <div className={classnames({
                 [styles.inputLongShadow]: isDesktop,
@@ -71,6 +73,10 @@ class SearchField extends Component {
                     [styles.smallInputPrompt]: isDesktop,
                     [styles.largeInputPrompt]: !isDesktop
                 })}>Location: </span>
+                <img className={classnames({
+                    [styles.smallInputIcon]: isDesktop,
+                    [styles.largeInputIcon]: !isDesktop
+                })} src={`/public/plus-${plusIconSize}.png`} />
             </div>
         );
     }
