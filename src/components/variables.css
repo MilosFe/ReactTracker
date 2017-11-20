@@ -1,14 +1,14 @@
 :root {
-    --light-yellow: #F7F4D7;
-    --light-blue: #AFD5E1;
-    --light-blue-grey: #E9F2F0;
-    --light-grey1: #FCFAEE;
-    --light-grey2: #EBEEE7;
-    --light-grey3: #F1F6EF;
+    --lightYellow: #F7F4D7;
+    --lightBlue: #AFD5E1;
+    --lightBlue-grey: #E9F2F0;
+    --lightGrey1: #FCFAEE;
+    --lightGrey2: #EBEEE7;
+    --lightGrey3: #F1F6EF;
     --white: white;
     --darkOrange: #E99866;
     --lightOrange: #E3B168;
-    --bright-blue: #88DBEF;
+    --brightBlue: #88DBEF;
 }
 
 :root {
