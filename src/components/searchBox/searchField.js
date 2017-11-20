@@ -28,11 +28,20 @@ class SearchField extends Component {
 
     render() {
         const { value, suggestions } = this.state;
+        const { isDesktop } = this.props;
 
         const inputProps = {
             value,
             onChange: this.onChange.bind(this)
         };
+
+        const modifiedTheme = Object.assign({}, theme, {
+            suggestionsContainerOpen: classnames({
+                [theme.suggestionsContainerOpen]: true,
+                [theme.suggestionsContainerOpenLarge]: !isDesktop,
+                [theme.suggestionsContainerOpenSmall]: isDesktop
+            })
+        });
 
         return (
             <Autosuggest
@@ -43,7 +52,7 @@ class SearchField extends Component {
                 renderSuggestion={renderSuggestion}
                 renderInputComponent={this.renderInputComponent.bind(this)}
                 inputProps={inputProps}
-                theme={theme}
+                theme={modifiedTheme}
             />
         );
     }
