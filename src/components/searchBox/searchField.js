@@ -49,12 +49,13 @@ class SearchField extends Component {
     }
 
     renderInputComponent(inputProps) {
-        const { shadow } = this.props;
+        const { isDesktop } = this.props;
 
         return (
             <div className={classnames({
-                [styles.inputContainer]: true,
-                [styles.inputLongShadow]: shadow
+                [styles.inputLongShadow]: isDesktop,
+                [styles.smallInputContainer]: isDesktop,
+                [styles.largeInputContainer]: !isDesktop
             })}>
                 <input {...inputProps} />
                 <span className={styles.inputPrompt}>Location: </span>

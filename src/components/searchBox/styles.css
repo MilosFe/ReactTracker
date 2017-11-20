@@ -37,7 +37,17 @@
     margin-top: 35px;
 }
 
-.inputContainer {
+.smallInputContainer {
+    width: 282px;
+    height: 30px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.largeInputContainer {
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
     position: relative;
 }
 
