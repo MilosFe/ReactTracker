@@ -14,10 +14,19 @@ class SearchBox extends Component {
                     <span className={styles.searchBoxHeader}>
                         {'How\'s the weather in...'}
                     </span>
-                    <SearchField />
+                    <SearchField shadow/>
                 </div>
             );
         }
+
+        return (
+            <div className={styles.mobileContainer}>
+                <span className={styles.searchBoxHeader}>
+                    {'How\'s the weather in...'}
+                </span>
+                <SearchField/>
+            </div>
+        );
     }
 }
 

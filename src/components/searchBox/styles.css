@@ -1,14 +1,14 @@
 @import '../variables.css';
 
 .desktopContainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 0 auto;
-	width: 368px;
-	height: 150px;
-	border: 1px solid var(--white);
-	background-image:
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 368px;
+    height: 150px;
+    border: 1px solid var(--white);
+    background-image:
         linear-gradient(
             to right,
             var(--light-grey1),
@@ -16,14 +16,32 @@
         );
 }
 
+.mobileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 150px;
+    border-bottom: 1px solid var(--white);
+    background-image:
+        linear-gradient(
+            var(--light-blue-grey),
+            var(--light-grey3)
+        );
+}
+
 .searchBoxHeader {
-	font-family: 'Pacifico', cursive;
-	font-size: var(--font2);
-	margin-top: 35px;
+    font-family: 'Pacifico', cursive;
+    font-size: var(--font2);
+    margin-top: 35px;
 }
 
 .inputContainer {
-	position: relative;
+    position: relative;
+}
+
+.inputLongShadow {
     box-shadow: var(--light-grey2) 1px 1px,
     var(--light-grey2) 2px 2px,
     var(--light-grey2) 3px 3px,
@@ -70,10 +88,10 @@
 }
 
 .inputPrompt {
-	position: absolute;
-	top: 6px;
-	left: 10px;
+    position: absolute;
+    top: 6px;
+    left: 10px;
     font-family: 'Lato', sans-serif;
     font-size: var(--font1);
-	font-weight: bold;
+    font-weight: bold;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
+import classnames from 'classnames';
 
 import theme from './autosuggestTheme.css';
 import styles from './styles.css';
@@ -40,7 +41,7 @@ class SearchField extends Component {
                 onSuggestionsClearRequested={this.onSuggestionsClearRequested.bind(this)}
                 getSuggestionValue={getSuggestionValue}
                 renderSuggestion={renderSuggestion}
-                renderInputComponent={this.renderInputComponent}
+                renderInputComponent={this.renderInputComponent.bind(this)}
                 inputProps={inputProps}
                 theme={theme}
             />
@@ -48,8 +49,13 @@ class SearchField extends Component {
     }
 
     renderInputComponent(inputProps) {
+        const { shadow } = this.props;
+
         return (
-            <div className={styles.inputContainer}>
+            <div className={classnames({
+                [styles.inputContainer]: true,
+                [styles.inputLongShadow]: shadow
+            })}>
                 <input {...inputProps} />
                 <span className={styles.inputPrompt}>Location: </span>
             </div>
