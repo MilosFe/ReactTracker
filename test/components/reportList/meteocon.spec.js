@@ -6,54 +6,178 @@ import ReactImageFallback from 'react-image-fallback';
 
 import Meteocon from '../../../src/components/reportList/meteocon';
 
-describe('Meteocon', () => {
-    const expectSvgName = (wrapper, prop, name) => {
-        expect(wrapper.find(ReactImageFallback).prop(prop)).to.equal(`/public/${name}.svg`);
+describe('Meteocon icons', () => {
+    const expectSvgName = (wrapper, name) => {
+        expect(wrapper.find('img').prop('src')).to.equal(`/public/${name}.svg`);
     };
 
-    it('renders the appropriate weather icon if available', () => {
+    const expectMeteoconHasIcon = (weather, expectedIcon) => {
         const wrapper = shallow(
-            <Meteocon weather={{condition: 'sunny'}} />
+            <Meteocon weather={weather} />
         );
 
-        expectSvgName(wrapper, 'src', 'sunny');
+        expectSvgName(wrapper, expectedIcon);
+    }
+
+    it('sunny', () => {
+        expectMeteoconHasIcon({
+            isDay: true,
+            tempC: 20,
+            windKph: 4,
+            precipitation: 0,
+            cloudPc: 2
+        }, 'sunny');
     });
 
-    it('renders the appropriate weather icon regardless of case', () => {
-        const wrapper = shallow(
-            <Meteocon weather={{condition: 'Sunny'}} />
-        );
-
-        expectSvgName(wrapper, 'src', 'sunny');
+    it('night', () => {
+        expectMeteoconHasIcon({
+            isDay: false,
+            tempC: 20,
+            windKph: 4,
+            precipitation: 0,
+            cloudPc: 2
+        }, 'night');
     });
 
-    describe('fallback icons', () => {
-        it('should render the sunny image when it is day', () => {
-            const weather = {
-                condition: 'Sun should not be that big',
-                isDay: true
-            };
+    it('windy', () => {
+        expectMeteoconHasIcon({
+            isDay: true,
+            tempC: 20,
+            windKph: 30,
+            precipitation: 0,
+            cloudPc: 2
+        }, 'windy');
 
-            const wrapper = shallow(
-                <Meteocon weather={weather} />
-            );
+        expectMeteoconHasIcon({
+            isDay: false,
+            tempC: 20,
+            windKph: 30,
+            precipitation: 0,
+            cloudPc: 2
+        }, 'windy');
+    });
 
-            expectSvgName(wrapper, 'src', 'sunShouldNotBeThatBig');
-            expectSvgName(wrapper, 'fallbackImage', 'sunny');
-        });
+    it('partlyCloudyDay', () => {
+        expectMeteoconHasIcon({
+            isDay: true,
+            tempC: 20,
+            windKph: 4,
+            precipitation: 0,
+            cloudPc: 20
+        }, 'partlyCloudyDay');
+    });
 
-        it('should render the night image when it is night', () => {
-            const weather = {
-                condition: 'Sun seems to be missing',
-                isDay: false
-            };
+    it('partlyCloudyNight', () => {
+        expectMeteoconHasIcon({
+            isDay: false,
+            tempC: 20,
+            windKph: 4,
+            precipitation: 0,
+            cloudPc: 20
+        }, 'partlyCloudyNight');
+    });
 
-            const wrapper = shallow(
-                <Meteocon weather={weather} />
-            );
+    it('overcast', () => {
+        expectMeteoconHasIcon({
+            isDay: false,
+            tempC: 20,
+            windKph: 4,
+            precipitation: 0,
+            cloudPc: 50
+        }, 'overcast');
+    });
 
-            expectSvgName(wrapper, 'src', 'sunSeemsToBeMissing');
-            expectSvgName(wrapper, 'fallbackImage', 'night');
-        });
+    it('heavyClouds', () => {
+        expectMeteoconHasIcon({
+            isDay: false,
+            tempC: 20,
+            windKph: 4,
+            precipitation: 0,
+            cloudPc: 90
+        }, 'heavyClouds');
+    });
+
+    it('lightRain', () => {
+        expectMeteoconHasIcon({
+            isDay: true,
+            tempC: 20,
+            windKph: 4,
+            precipitation: 4,
+            cloudPc: 70
+        }, 'lightRain');
+    });
+
+    it('heavyRain', () => {
+        expectMeteoconHasIcon({
+            isDay: true,
+            tempC: 20,
+            windKph: 4,
+            precipitation: 9,
+            cloudPc: 90
+        }, 'heavyRain');
+    });
+
+    it('lightSnow', () => {
+        expectMeteoconHasIcon({
+            isDay: true,
+            tempC: -5,
+            windKph: 4,
+            precipitation: 4,
+            cloudPc: 70
+        }, 'lightSnow');
+    });
+
+    it('heavySnow', () => {
+        expectMeteoconHasIcon({
+            isDay: true,
+            tempC: -10,
+            windKph: 4,
+            precipitation: 9,
+            cloudPc: 90
+        }, 'heavySnow');
+    });
+
+    it('windAndClouds', () => {
+        expectMeteoconHasIcon({
+            isDay: true,
+            tempC: -10,
+            windKph: 10,
+            precipitation: 1,
+            cloudPc: 20
+        }, 'windAndClouds');
+
+        expectMeteoconHasIcon({
+            isDay: true,
+            tempC: -10,
+            windKph: 10,
+            precipitation: 1,
+            cloudPc: 50
+        }, 'windAndClouds');
+
+        expectMeteoconHasIcon({
+            isDay: true,
+            tempC: -10,
+            windKph: 10,
+            precipitation: 1,
+            cloudPc: 90
+        }, 'windAndClouds');
+    });
+
+    it('windRainClouds', () => {
+        expectMeteoconHasIcon({
+            isDay: true,
+            tempC: 10,
+            windKph: 10,
+            precipitation: 5,
+            cloudPc: 50
+        }, 'windRainClouds');
+
+        expectMeteoconHasIcon({
+            isDay: true,
+            tempC: 10,
+            windKph: 10,
+            precipitation: 10,
+            cloudPc: 90
+        }, 'windRainClouds');
     });
 });

@@ -40,9 +40,9 @@ describe('api', () => {
                     current: {
                         temp_c: 20,
                         is_day: 1,
-                        condition: {
-                            text: 'Sunny'
-                        }
+                        wind_kph: 4.3,
+                        cloud: 10,
+                        precip_mm: 5
                     }
                 }
             }));
@@ -63,7 +63,9 @@ describe('api', () => {
                         weather: {
                             tempC: 20,
                             isDay: true,
-                            condition: 'Sunny'
+                            windKph: 4.3,
+                            cloudPc: 10,
+                            precipitation: 5
                         }
                     });
 

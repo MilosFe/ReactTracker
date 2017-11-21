@@ -18,9 +18,11 @@ export const fetchCurrentWeather = (cityName) => {
                 country: location.country
             },
             weather: {
-                tempC: current.temp_c,
                 isDay: !!current.is_day,
-                condition: current.condition.text
+                tempC: current.temp_c,
+                windKph: current.wind_kph,
+                cloudPc: current.cloud,
+                precipitation: current.precip_mm
             }
         }
     });
