@@ -22,6 +22,11 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    background-image:
+        linear-gradient(
+            var(--lightBlue),
+            var(--lightYellow) 30%
+        );
 }
 
 .logo {
