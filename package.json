@@ -22,6 +22,7 @@
         "react": "^16.1.1",
         "react-autosuggest": "^9.3.2",
         "react-dom": "^16.1.1",
+        "react-image-fallback": "^7.0.1",
         "react-redux": "^5.0.6",
         "react-screen-size": "^1.0.1",
         "redux": "^3.7.2",

@@ -3,15 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import styles from './styles.css';
-
-const Meteocon = ({ className, name }) => {
-    return (
-        <img
-            className={classnames(styles.meteocon, className)}
-            src={`/public/${name}.svg`}
-        />
-    );
-};
+import Meteocon from './meteocon';
 
 class Report extends Component {
     render() {
@@ -19,7 +11,7 @@ class Report extends Component {
 
         return (
             <div className={classnames(styles.reportContainer, color)}>
-                <Meteocon name="2" className={styles.smallIcon} />
+                <Meteocon weather={weather} className={styles.smallIcon} />
                 <div className={styles.detailsContainer}>
                     <div className={styles.degreesContainer}>
                         <span className={styles.degrees}>{weather.tempC}</span>
