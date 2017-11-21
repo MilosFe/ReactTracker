@@ -31,11 +31,12 @@
 }
 
 .meteocon {
+    margin: auto 5px;
     filter: invert(100%);
 }
 
 .smallIcon {
-    height: 75px;
+    height: 60px;
 }
 
 .detailsContainer {
