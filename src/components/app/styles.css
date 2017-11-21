@@ -12,8 +12,8 @@ body {
     background-image:
         linear-gradient(
             to bottom right,
-            var(--light-yellow) 30%,
-            var(--light-blue)
+            var(--lightYellow) 30%,
+            var(--lightBlue)
         );
 }
 
@@ -24,8 +24,8 @@ body {
     flex-direction: column;
     background-image:
         linear-gradient(
-            var(--light-blue),
-            var(--light-yellow) 30%
+            var(--lightBlue),
+            var(--lightYellow) 30%
         );
 }
 

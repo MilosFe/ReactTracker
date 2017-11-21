@@ -1,0 +1,80 @@
+@import '../variables.css';
+
+.desktopReportListContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 50px auto;
+    width: 80%;
+}
+
+.reportContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 4px 0px 4px;
+    width: 220px;
+    height: 75px;
+    border-radius: 4px;
+}
+
+.darkOrange {
+    background-color: var(--darkOrange);
+}
+
+.lightOrange {
+    background-color: var(--lightOrange);
+}
+
+.brightBlue {
+    background-color: var(--brightBlue);
+}
+
+.meteocon {
+    margin: auto 5px;
+    filter: invert(100%);
+}
+
+.smallIcon {
+    height: 60px;
+}
+
+.detailsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.degreesContainer {
+    display: flex;
+    margin: 0 auto;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+.degrees {
+    color: var(--offWhite);
+    font-size: var(--font5);
+}
+
+.degreesMarker {
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    top: 12px;
+    color: var(--offWhite);
+    font-size: var(--font-1);
+}
+
+.cityName {
+    margin: 7px auto;
+    color: var(--offWhite);
+    font-size: var(--font1);
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    width: 120px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+}

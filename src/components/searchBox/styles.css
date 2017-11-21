@@ -11,8 +11,8 @@
     background-image:
         linear-gradient(
             to right,
-            var(--light-grey1),
-            var(--light-grey3)
+            var(--lightGrey1),
+            var(--lightGrey3)
         );
 }
 
@@ -26,14 +26,14 @@
     border-bottom: 1px solid var(--white);
     background-image:
         linear-gradient(
-            var(--light-blue-grey),
-            var(--light-grey3)
+            var(--lightBlueGrey),
+            var(--lightGrey3)
         );
 }
 
 .searchBoxHeader {
     font-family: 'Pacifico', cursive;
-    font-size: var(--font3);
+    font-size: var(--font4);
     margin-top: 35px;
 }
 
@@ -43,7 +43,7 @@
     margin: 0 auto;
     position: relative;
     font-family: 'Lato', sans-serif;
-    font-size: var(--font1);
+    font-size: var(--font2);
 }
 
 .largeInputContainer {
@@ -52,7 +52,7 @@
     margin: 0 auto;
     position: relative;
     font-family: 'Lato', sans-serif;
-    font-size: var(--font2);
+    font-size: var(--font3);
 }
 
 .smallInputContainer input {
@@ -64,49 +64,49 @@
 }
 
 .inputLongShadow {
-    box-shadow: var(--light-grey2) 1px 1px,
-    var(--light-grey2) 2px 2px,
-    var(--light-grey2) 3px 3px,
-    var(--light-grey2) 4px 4px,
-    var(--light-grey2) 5px 5px,
-    var(--light-grey2) 6px 6px,
-    var(--light-grey2) 7px 7px,
-    var(--light-grey2) 8px 8px,
-    var(--light-grey2) 9px 9px,
-    var(--light-grey2) 10px 10px,
-    var(--light-grey2) 11px 11px,
-    var(--light-grey2) 12px 12px,
-    var(--light-grey2) 13px 13px,
-    var(--light-grey2) 14px 14px,
-    var(--light-grey2) 15px 15px,
-    var(--light-grey2) 16px 16px,
-    var(--light-grey2) 17px 17px,
-    var(--light-grey2) 18px 18px,
-    var(--light-grey2) 19px 19px,
-    var(--light-grey2) 20px 20px,
-    var(--light-grey2) 21px 21px,
-    var(--light-grey2) 22px 22px,
-    var(--light-grey2) 23px 23px,
-    var(--light-grey2) 24px 24px,
-    var(--light-grey2) 25px 25px,
-    var(--light-grey2) 26px 26px,
-    var(--light-grey2) 27px 27px,
-    var(--light-grey2) 28px 28px,
-    var(--light-grey2) 29px 29px,
-    var(--light-grey2) 30px 30px,
-    var(--light-grey2) 31px 31px,
-    var(--light-grey2) 32px 32px,
-    var(--light-grey2) 33px 33px,
-    var(--light-grey2) 34px 34px,
-    var(--light-grey2) 35px 35px,
-    var(--light-grey2) 36px 36px,
-    var(--light-grey2) 37px 37px,
-    var(--light-grey2) 38px 38px,
-    var(--light-grey2) 39px 39px,
-    var(--light-grey2) 40px 40px,
-    var(--light-grey2) 41px 41px,
-    var(--light-grey2) 42px 42px,
-    var(--light-grey2) 43px 43px;
+    box-shadow: var(--lightGrey2) 1px 1px,
+    var(--lightGrey2) 2px 2px,
+    var(--lightGrey2) 3px 3px,
+    var(--lightGrey2) 4px 4px,
+    var(--lightGrey2) 5px 5px,
+    var(--lightGrey2) 6px 6px,
+    var(--lightGrey2) 7px 7px,
+    var(--lightGrey2) 8px 8px,
+    var(--lightGrey2) 9px 9px,
+    var(--lightGrey2) 10px 10px,
+    var(--lightGrey2) 11px 11px,
+    var(--lightGrey2) 12px 12px,
+    var(--lightGrey2) 13px 13px,
+    var(--lightGrey2) 14px 14px,
+    var(--lightGrey2) 15px 15px,
+    var(--lightGrey2) 16px 16px,
+    var(--lightGrey2) 17px 17px,
+    var(--lightGrey2) 18px 18px,
+    var(--lightGrey2) 19px 19px,
+    var(--lightGrey2) 20px 20px,
+    var(--lightGrey2) 21px 21px,
+    var(--lightGrey2) 22px 22px,
+    var(--lightGrey2) 23px 23px,
+    var(--lightGrey2) 24px 24px,
+    var(--lightGrey2) 25px 25px,
+    var(--lightGrey2) 26px 26px,
+    var(--lightGrey2) 27px 27px,
+    var(--lightGrey2) 28px 28px,
+    var(--lightGrey2) 29px 29px,
+    var(--lightGrey2) 30px 30px,
+    var(--lightGrey2) 31px 31px,
+    var(--lightGrey2) 32px 32px,
+    var(--lightGrey2) 33px 33px,
+    var(--lightGrey2) 34px 34px,
+    var(--lightGrey2) 35px 35px,
+    var(--lightGrey2) 36px 36px,
+    var(--lightGrey2) 37px 37px,
+    var(--lightGrey2) 38px 38px,
+    var(--lightGrey2) 39px 39px,
+    var(--lightGrey2) 40px 40px,
+    var(--lightGrey2) 41px 41px,
+    var(--lightGrey2) 42px 42px,
+    var(--lightGrey2) 43px 43px;
 }
 
 .smallInputPrompt {
@@ -126,14 +126,12 @@
 }
 
 .smallInputIcon {
-    pointer-events: none;
     position: absolute;
     top: 8px;
     right: 15px;
 }
 
 .largeInputIcon {
-    pointer-events: none;
     position: absolute;
     top: 14px;
     right: 15px;

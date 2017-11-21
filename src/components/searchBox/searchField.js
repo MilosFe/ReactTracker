@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import classnames from 'classnames';
 
@@ -10,9 +11,7 @@ const getSuggestionValue = (suggestion) => suggestion;
 
 const renderSuggestion = (suggestion) => {
     return (
-        <div>
-            {suggestion}
-        </div>
+        <div>{suggestion}</div>
     );
 };
 
@@ -73,10 +72,12 @@ class SearchField extends Component {
                     [styles.smallInputPrompt]: isDesktop,
                     [styles.largeInputPrompt]: !isDesktop
                 })}>Location: </span>
-                <img className={classnames({
-                    [styles.smallInputIcon]: isDesktop,
-                    [styles.largeInputIcon]: !isDesktop
-                })} src={`/public/plus-${plusIconSize}.png`} />
+                <button onClick={this.handleAddReportClick.bind(this)}>
+                    <img className={classnames({
+                        [styles.smallInputIcon]: isDesktop,
+                        [styles.largeInputIcon]: !isDesktop
+                    })} src={`/public/plus-${plusIconSize}.png`} />
+                </button>
             </div>
         );
     }
@@ -102,6 +103,18 @@ class SearchField extends Component {
             suggestions: []
         });
     };
+
+    handleAddReportClick() {
+        const { fetchWeatherReport } = this.props;
+        const { value } = this.state;
+
+        fetchWeatherReport(value);
+    }
 }
+
+SearchField.propTypes = {
+    isDesktop: PropTypes.bool,
+    fetchWeatherReport: PropTypes.func
+};
 
 export default SearchField;

@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { connectScreenSize } from 'react-screen-size';
 
 import styles from './styles.css';
 import Logo from '../logo';
 import SearchBox from '../searchBox';
-import CityList from '../cityList';
+import ReportList from '../reportList';
+import { fetchWeatherReport } from '../../redux/weatherReports';
+
+const ReportListContainer = connect((state) => ({
+    reports: state.reports
+}))(ReportList);
+
+const SearchBoxContainer = connect((state) => ({}), {
+    fetchWeatherReport
+})(SearchBox);
 
 class App extends Component {
     render() {
@@ -15,16 +25,16 @@ class App extends Component {
             return (
                 <div className={styles.desktopContainer}>
                     <Logo className={styles.logo} />
-                    <SearchBox isDesktop={isDesktop} />
-                    <CityList />
+                    <SearchBoxContainer isDesktop={isDesktop} />
+                    <ReportListContainer isDesktop={isDesktop} />
                 </div>
             );
         }
 
         return (
             <div className={styles.mobileContainer}>
-                <SearchBox isDesktop={isDesktop} />
-                <CityList />
+                <SearchBoxContainer isDesktop={isDesktop} />
+                <ReportListContainer isDesktop={isDesktop} />
                 <Logo className={styles.logo} />
             </div>
         );
@@ -32,7 +42,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-    isDesktop: PropTypes.bool.isRequired
+    isDesktop: PropTypes.bool.isRequired,
 };
 
 const mapScreenSizeToProps = (screenSize) => ({
