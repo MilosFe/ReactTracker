@@ -27,17 +27,33 @@ describe('Meteocon', () => {
         expectSvgName(wrapper, 'src', 'sunny');
     });
 
-    it('computes an appropriate icon if condition is not found', () => {
-        const weather = {
-            condition: 'Apocalypse',
-            tempC: 100
-        };
+    describe('fallback icons', () => {
+        it('should render the sunny image when it is day', () => {
+            const weather = {
+                condition: 'Sun should not be that big',
+                isDay: true
+            };
 
-        const wrapper = shallow(
-            <Meteocon weather={weather} />
-        );
+            const wrapper = shallow(
+                <Meteocon weather={weather} />
+            );
 
-        expectSvgName(wrapper, 'src', 'apocalypse');
-        expectSvgName(wrapper, 'fallbackImage', 'sunny');
+            expectSvgName(wrapper, 'src', 'sunShouldNotBeThatBig');
+            expectSvgName(wrapper, 'fallbackImage', 'sunny');
+        });
+
+        it('should render the night image when it is night', () => {
+            const weather = {
+                condition: 'Sun seems to be missing',
+                isDay: false
+            };
+
+            const wrapper = shallow(
+                <Meteocon weather={weather} />
+            );
+
+            expectSvgName(wrapper, 'src', 'sunSeemsToBeMissing');
+            expectSvgName(wrapper, 'fallbackImage', 'night');
+        });
     });
 });

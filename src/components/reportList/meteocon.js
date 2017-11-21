@@ -5,13 +5,9 @@ import { camelCase } from 'lodash';
 
 import styles from './styles.css';
 
-const computeIconFromWeather = (weather) => {
-    return 'sunny';
-};
-
 const Meteocon = ({ className, weather }) => {
     const fileNameFromCondition = camelCase(weather.condition);
-    const fallbackImage = computeIconFromWeather(weather);
+    const fallbackImage = weather.isDay ? 'sunny' : 'night';
 
     return (
         <ReactImageFallback
