@@ -47,7 +47,6 @@ class SearchField extends Component {
                 suggestions={suggestions}
                 onSuggestionsFetchRequested={this.onSuggestionsFetchRequested.bind(this)}
                 onSuggestionsClearRequested={this.onSuggestionsClearRequested.bind(this)}
-                onSuggestionSelected={this.onSuggestionSelected.bind(this)}
                 getSuggestionValue={getSuggestionValue}
                 renderSuggestion={renderSuggestion}
                 renderInputComponent={this.renderInputComponent.bind(this)}
@@ -68,19 +67,30 @@ class SearchField extends Component {
                 [styles.smallInputContainer]: isDesktop,
                 [styles.largeInputContainer]: !isDesktop
             })}>
-                <input {...inputProps} />
+                <input
+                    {...inputProps}
+                    onKeyPress={this.onInputKeyPress.bind(this)}
+                />
                 <span className={classnames({
                     [styles.smallInputPrompt]: isDesktop,
                     [styles.largeInputPrompt]: !isDesktop
                 })}>Location: </span>
-                <button onClick={this.handleAddReportClick.bind(this)}>
-                    <img className={classnames({
-                        [styles.smallInputIcon]: isDesktop,
-                        [styles.largeInputIcon]: !isDesktop
-                    })} src={`/public/plus-${plusIconSize}.png`} />
-                </button>
+                    <img
+                        className={classnames({
+                            [styles.smallInputIcon]: isDesktop,
+                            [styles.largeInputIcon]: !isDesktop
+                        })}
+                        src={`/public/plus-${plusIconSize}.png`}
+                        onClick={this.handleAddReportClick.bind(this)}
+                    />
             </div>
         );
+    }
+
+    onInputKeyPress(event) {
+        if (event.nativeEvent.key === 'Enter') {
+            return this.handleAddReportClick();
+        }
     }
 
     onChange(event, { newValue }) {
@@ -104,10 +114,6 @@ class SearchField extends Component {
             suggestions: []
         });
     };
-
-    onSuggestionSelected() {
-        this.handleAddReportClick();
-    }
 
     handleAddReportClick() {
         const { fetchWeatherReport } = this.props;
