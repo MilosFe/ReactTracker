@@ -9,6 +9,18 @@
     width: 80%;
 }
 
+.mobileReportListContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+    background-image:
+        linear-gradient(
+            var(--lightGrey4),
+            var(--lightYellow) 30%
+        );
+}
+
 .reportContainer {
     display: flex;
     flex-direction: row;

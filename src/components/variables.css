@@ -1,10 +1,11 @@
 :root {
     --lightYellow: #F7F4D7;
     --lightBlue: #AFD5E1;
-    --lightBlue-grey: #E9F2F0;
+    --lightBlueGrey: #E9F2F0;
     --lightGrey1: #FCFAEE;
     --lightGrey2: #EBEEE7;
     --lightGrey3: #F1F6EF;
+    --lightGrey4: #E0EADB;
     --white: white;
     --offWhite: #E2E2E4; /* Meteocon icon inversion gives this color */
     --darkOrange: #E99866;
