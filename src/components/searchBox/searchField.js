@@ -47,6 +47,7 @@ class SearchField extends Component {
                 suggestions={suggestions}
                 onSuggestionsFetchRequested={this.onSuggestionsFetchRequested.bind(this)}
                 onSuggestionsClearRequested={this.onSuggestionsClearRequested.bind(this)}
+                onSuggestionSelected={this.onSuggestionSelected.bind(this)}
                 getSuggestionValue={getSuggestionValue}
                 renderSuggestion={renderSuggestion}
                 renderInputComponent={this.renderInputComponent.bind(this)}
@@ -103,6 +104,10 @@ class SearchField extends Component {
             suggestions: []
         });
     };
+
+    onSuggestionSelected() {
+        this.handleAddReportClick();
+    }
 
     handleAddReportClick() {
         const { fetchWeatherReport } = this.props;
