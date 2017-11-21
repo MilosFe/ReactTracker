@@ -50,11 +50,10 @@ describe('ReportList', () => {
 
         const colors = getColors(wrapper);
 
-        // Statistically unlikely to pass unless the algorithm is correct
         expectNoAdjacentIdenticalColors(colors);
     });
 
-    it('renders each report with a different color than the last', () => {
+    it('maintains previous generated colors for each report', () => {
         const reports = generateReports(10);
 
         const wrapper = shallow(
@@ -65,14 +64,12 @@ describe('ReportList', () => {
         const additionalReport = generateReports(1);
         const newReports = [...additionalReport, ...reports]
 
-        console.log(newReports);
         wrapper.setProps({
             reports: newReports
         });
 
         const newColors = getColors(wrapper);
 
-        // Statistically unlikely to pass unless the algorithm is correct
         expectNoAdjacentIdenticalColors(newColors);
         expect(newColors.slice(1)).to.deep.equal(colors);
     });
