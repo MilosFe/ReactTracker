@@ -102,7 +102,10 @@ class SearchField extends Component {
     onSuggestionsFetchRequested({ value }) {
         fetchSuggestions(value)
             .then((suggestions) => {
-                this.setState({ suggestions });
+                // Prevent old requests from overriding newer ones
+                if (this.state.value === value) {
+                    this.setState({ suggestions });
+                }
             })
             .catch((err) => {
                 console.log(err);
