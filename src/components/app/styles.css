@@ -1,9 +1,5 @@
 @import '../variables.css';
 
-body {
-    margin: 0;
-}
-
 .desktopContainer {
     min-height: 100%;
     width: 100%;
