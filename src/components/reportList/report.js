@@ -27,6 +27,7 @@ class Report extends Component {
                             {`${location.name}, ${location.country}`}
                         </span>
                     </div>
+                    <img className={styles.removeIcon} src="/public/removeIcon16.png" />
                 </div>
             );
         }
@@ -48,6 +49,7 @@ class Report extends Component {
                     <span className={styles.degreesLarge}>{Math.round(weather.tempC)}</span>
                     <span className={styles.degreesMarkerLarge}>°C</span>
                 </div>
+                <img className={styles.removeIcon} src="/public/removeIcon20.png" />
             </div>
         );
     }
