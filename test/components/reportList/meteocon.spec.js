@@ -102,7 +102,7 @@ describe('Meteocon icons', () => {
             isDay: true,
             tempC: 20,
             windKph: 4,
-            precipitation: 4,
+            precipitation: 0.8,
             cloudPc: 70
         }, 'lightRain');
     });
@@ -112,7 +112,7 @@ describe('Meteocon icons', () => {
             isDay: true,
             tempC: 20,
             windKph: 4,
-            precipitation: 9,
+            precipitation: 5,
             cloudPc: 90
         }, 'heavyRain');
     });
@@ -122,7 +122,7 @@ describe('Meteocon icons', () => {
             isDay: true,
             tempC: -5,
             windKph: 4,
-            precipitation: 4,
+            precipitation: 0.7,
             cloudPc: 70
         }, 'lightSnow');
     });
@@ -132,7 +132,7 @@ describe('Meteocon icons', () => {
             isDay: true,
             tempC: -10,
             windKph: 4,
-            precipitation: 9,
+            precipitation: 4,
             cloudPc: 90
         }, 'heavySnow');
     });
@@ -142,7 +142,7 @@ describe('Meteocon icons', () => {
             isDay: true,
             tempC: -10,
             windKph: 10,
-            precipitation: 1,
+            precipitation: 0.1,
             cloudPc: 20
         }, 'windAndClouds');
 
@@ -150,7 +150,7 @@ describe('Meteocon icons', () => {
             isDay: true,
             tempC: -10,
             windKph: 10,
-            precipitation: 1,
+            precipitation: 0.1,
             cloudPc: 50
         }, 'windAndClouds');
 
@@ -158,7 +158,7 @@ describe('Meteocon icons', () => {
             isDay: true,
             tempC: -10,
             windKph: 10,
-            precipitation: 1,
+            precipitation: 0.1,
             cloudPc: 90
         }, 'windAndClouds');
     });
@@ -168,7 +168,7 @@ describe('Meteocon icons', () => {
             isDay: true,
             tempC: 10,
             windKph: 10,
-            precipitation: 5,
+            precipitation: 1,
             cloudPc: 50
         }, 'windRainClouds');
 
@@ -176,7 +176,7 @@ describe('Meteocon icons', () => {
             isDay: true,
             tempC: 10,
             windKph: 10,
-            precipitation: 10,
+            precipitation: 4,
             cloudPc: 90
         }, 'windRainClouds');
     });
