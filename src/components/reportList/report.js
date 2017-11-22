@@ -58,15 +58,15 @@ Report.propTypes = {
     color: PropTypes.string,
     report: PropTypes.shape({
         location: PropTypes.shape({
-            name: PropTypes.string,
-            country: PropTypes.string
+            name: PropTypes.string.isRequired,
+            country: PropTypes.string.isRequired
         }),
         weather: PropTypes.shape({
-            tempC: PropTypes.number,
-            tempF: PropTypes.number,
+            tempC: PropTypes.number.isRequired,
             isDay: PropTypes.bool,
-            condition: PropTypes.string,
-            windKph: PropTypes.number
+            windKph: PropTypes.number,
+            cloudPc: PropTypes.number,
+            precipitation: PropTypes.number
         })
     })
 }
