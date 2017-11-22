@@ -6,6 +6,7 @@ const initialState = {
     reports: reportsStub
 };
 
+const REMOVE_WEATHER_REPORT = 'REMOVE_WEATHER_REPORT';
 const FETCH_CURRENT_WEATHER_SUCCESS = 'FETCH_CURRENT_WEATHER_SUCCESS';
 
 const citiesAreSame = (report, otherReport) => {
@@ -14,6 +15,10 @@ const citiesAreSame = (report, otherReport) => {
 }
 
 export default createReducer({
+    [REMOVE_WEATHER_REPORT]: (state, payload) => ({
+        ...state,
+        reports: state.reports.filter((city) => !citiesAreSame(city, payload))
+    }),
     [FETCH_CURRENT_WEATHER_SUCCESS]: (state, payload) => {
         const unchangedCities = state.reports.filter((city) => {
             return !citiesAreSame(city, payload);
@@ -25,6 +30,13 @@ export default createReducer({
         }
     }
 }, initialState);
+
+export const removeWeatherReport = (report) => {
+    return {
+        type: REMOVE_WEATHER_REPORT,
+        payload: report
+    }
+};
 
 export const fetchWeatherReport = (cityName) => {
     return (dispatch) => {

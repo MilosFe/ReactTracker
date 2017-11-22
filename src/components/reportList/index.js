@@ -22,8 +22,7 @@ class ReportList extends Component {
     }
 
     render() {
-        const { reports, isDesktop } = this.props;
-
+        const { reports, removeWeatherReport, isDesktop } = this.props;
 
         return (
             <div className={classnames({
@@ -39,6 +38,7 @@ class ReportList extends Component {
                             report={report}
                             cardSize={isDesktop ? 'sm' : 'lg'}
                             color={this.colors[key]}
+                            onRemove={removeWeatherReport}
                         />
                     );
                 })}
@@ -73,7 +73,8 @@ class ReportList extends Component {
 
 ReportList.propTypes = {
     isDesktop: PropTypes.bool,
-    reports: PropTypes.arrayOf(PropTypes.object)
+    reports: PropTypes.arrayOf(PropTypes.object),
+    removeWeatherReport: PropTypes.func
 }
 
 export default ReportList;

@@ -7,11 +7,13 @@ import styles from './styles.css';
 import Logo from '../logo';
 import SearchBox from '../searchBox';
 import ReportList from '../reportList';
-import { fetchWeatherReport } from '../../redux/weatherReports';
+import { fetchWeatherReport, removeWeatherReport } from '../../redux/weatherReports';
 
 const ReportListContainer = connect((state) => ({
     reports: state.reports
-}))(ReportList);
+}), {
+    removeWeatherReport
+})(ReportList);
 
 const SearchBoxContainer = connect((state) => ({}), {
     fetchWeatherReport
