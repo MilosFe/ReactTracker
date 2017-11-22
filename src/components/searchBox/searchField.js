@@ -70,7 +70,6 @@ class SearchField extends Component {
                 <input
                     {...inputProps}
                     onKeyPress={this.onInputKeyPress.bind(this)}
-                    onFocus={this.onInputFocus.bind(this)}
                     ref={this.setInputRef.bind(this)(inputProps)}
                 />
                 <span className={classnames({
@@ -83,7 +82,7 @@ class SearchField extends Component {
                         [styles.largeInputIcon]: !isDesktop
                     })}
                     src={`/public/plus-${plusIconSize}.png`}
-                    onClick={this.handleAddReportClick.bind(this)}
+                    onClick={this.onInputBtnPress.bind(this)}
                 />
             </div>
         );
@@ -99,15 +98,15 @@ class SearchField extends Component {
         }
     }
 
-    onInputFocus() {
-        this.input.select();
-    }
-
     onInputKeyPress(event) {
         if (event.nativeEvent.key === 'Enter') {
-            this.handleAddReportClick();
-            this.input.select();
+            this.addReport();
         }
+    }
+
+    onInputBtnPress() {
+        this.addReport();
+        this.input.focus();
     }
 
     onChange(event, { newValue }) {
@@ -135,9 +134,13 @@ class SearchField extends Component {
         });
     };
 
-    handleAddReportClick() {
+    addReport() {
         const { fetchWeatherReport } = this.props;
         const { value } = this.state;
+
+        this.setState({
+            value: ''
+        });
 
         fetchWeatherReport(value);
     }
