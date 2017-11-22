@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactImageFallback from 'react-image-fallback';
 import classnames from 'classnames';
 import { find } from 'lodash';
 
@@ -8,10 +7,8 @@ import styles from './styles.css';
 const day = ({ isDay }) => isDay;
 const night = ({ isDay }) => !isDay;
 const snowTemp = ({ tempC }) => tempC < 0;
-const noWind = ({ windKph }) => windKph < 5;
 const lightWind = ({ windKph }) => windKph >= 5 && windKph < 30;
 const heavyWind = ({ windKph }) => windKph >= 30;
-const noRain = ({ precipitation }) => precipitation < 2;
 const lightRain = ({ precipitation }) => precipitation >= 2 && precipitation < 6;
 const heavyRain = ({ precipitation }) => precipitation >= 6;
 const lightClouds = ({ cloudPc }) => cloudPc >= 10 && cloudPc < 30;
@@ -56,6 +53,17 @@ const Meteocon = ({ className, weather }) => {
             src={`/public/${iconName}.svg`}
         />
     );
+};
+
+Meteocon.propTypes = {
+    className: PropTypes.string,
+    weather: PropTypes.shape({
+        tempC: PropTypes.number.isRequired,
+        isDay: PropTypes.bool.isRequired,
+        windKph: PropTypes.number.isRequired,
+        cloudPc: PropTypes.number.isRequired,
+        precipitation: PropTypes.number.isRequired
+    })
 };
 
 export default Meteocon;

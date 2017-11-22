@@ -24,6 +24,6 @@ export const fetchCurrentWeather = (cityName) => {
                 cloudPc: current.cloud,
                 precipitation: current.precip_mm
             }
-        }
+        };
     });
 };

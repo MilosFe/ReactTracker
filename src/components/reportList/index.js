@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { random, range } from 'lodash';
+import { random } from 'lodash';
 
 import styles from './styles.css';
 import Report from './report';
@@ -62,7 +62,7 @@ class ReportList extends Component {
             const comparisonReportKey = this.generateKey(reports[index + 1]);
 
             const availableColors = COLORS.filter((color) => {
-                return color !== this.colors[comparisonReportKey]
+                return color !== this.colors[comparisonReportKey];
             });
 
             this.colors[key] = this.colors[key] ||
@@ -75,6 +75,6 @@ ReportList.propTypes = {
     isDesktop: PropTypes.bool,
     reports: PropTypes.arrayOf(PropTypes.object),
     removeWeatherReport: PropTypes.func
-}
+};
 
 export default ReportList;

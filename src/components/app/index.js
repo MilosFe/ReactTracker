@@ -44,7 +44,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-    isDesktop: PropTypes.bool.isRequired,
+    isDesktop: PropTypes.bool.isRequired
 };
 
 const mapScreenSizeToProps = (screenSize) => ({

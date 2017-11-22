@@ -41,13 +41,13 @@ class Report extends Component {
             <div className={classnames(styles.largeReportContainer, color)}>
                 <div className={styles.largeIconAndNameContainer}>
                     <Meteocon weather={weather} className={styles.largeIcon} />
-                        <span className={classnames(
-                            styles.cityName,
-                            styles.largeCityName,
-                            styles.ellipsis
-                        )}>
-                            {`${location.name}, ${location.country}`}
-                        </span>
+                    <span className={classnames(
+                        styles.cityName,
+                        styles.largeCityName,
+                        styles.ellipsis
+                    )}>
+                        {`${location.name}, ${location.country}`}
+                    </span>
                 </div>
                 <div className={classnames(styles.degreesContainer, styles.degreesContainerLarge)}>
                     <span className={styles.degreesLarge}>{Math.round(weather.tempC)}</span>
@@ -86,6 +86,6 @@ Report.propTypes = {
             precipitation: PropTypes.number
         })
     })
-}
+};
 
 export default Report;

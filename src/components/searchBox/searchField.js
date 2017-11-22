@@ -75,14 +75,14 @@ class SearchField extends Component {
                     [styles.smallInputPrompt]: isDesktop,
                     [styles.largeInputPrompt]: !isDesktop
                 })}>Location: </span>
-                    <img
-                        className={classnames({
-                            [styles.smallInputIcon]: isDesktop,
-                            [styles.largeInputIcon]: !isDesktop
-                        })}
-                        src={`/public/plus-${plusIconSize}.png`}
-                        onClick={this.handleAddReportClick.bind(this)}
-                    />
+                <img
+                    className={classnames({
+                        [styles.smallInputIcon]: isDesktop,
+                        [styles.largeInputIcon]: !isDesktop
+                    })}
+                    src={`/public/plus-${plusIconSize}.png`}
+                    onClick={this.handleAddReportClick.bind(this)}
+                />
             </div>
         );
     }
