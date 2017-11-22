@@ -95,7 +95,7 @@ class SearchField extends Component {
             }
 
             this.input = input;
-        }
+        };
     }
 
     onInputKeyPress(event) {

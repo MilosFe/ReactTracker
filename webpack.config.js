@@ -2,7 +2,7 @@ var path = require('path');
 var Dotenv = require('dotenv-webpack');
 
 var config = {
-	entry: './src/index.jsx',
+	entry: ["babel-polyfill", './src/index.jsx'],
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'bundle.js'

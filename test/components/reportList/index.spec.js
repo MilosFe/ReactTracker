@@ -15,10 +15,7 @@ describe('ReportList', () => {
     };
 
     const generateReports = (num) => Array(num).fill(0).map((_item) => ({
-        location: {
-            name: `fake${uniqID()}`,
-            country: `place`
-        }
+        id: uniqID()
     }));
 
     const getColors = (wrapper) => wrapper.find(Report)
@@ -36,7 +33,7 @@ describe('ReportList', () => {
         const reports = generateReports(5);
 
         const wrapper = shallow(
-            <ReportList reports={reports} removeWeatherReport={sinon.stub} />
+            <ReportList isDesktop reports={reports} removeWeatherReport={sinon.stub} />
         );
 
         expect(wrapper.find(Report).length).to.equal(5);
@@ -46,7 +43,7 @@ describe('ReportList', () => {
         const reports = generateReports(1000);
 
         const wrapper = shallow(
-            <ReportList reports={reports} removeWeatherReport={sinon.stub} />
+            <ReportList isDesktop reports={reports} removeWeatherReport={sinon.stub} />
         );
 
         const colors = getColors(wrapper);
@@ -58,7 +55,7 @@ describe('ReportList', () => {
         const reports = generateReports(10);
 
         const wrapper = shallow(
-            <ReportList reports={reports} removeWeatherReport={sinon.stub} />
+            <ReportList isDesktop reports={reports} removeWeatherReport={sinon.stub} />
         );
 
         const colors = getColors(wrapper);

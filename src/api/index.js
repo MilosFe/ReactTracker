@@ -16,7 +16,7 @@ export const fetchCurrentWeather = (cityName) => {
             id: `${name}_${country}_${lat}_${lon}`,
             location: {
                 name: name,
-                country: country,
+                country: country
             },
             weather: {
                 isDay: !!current.is_day,

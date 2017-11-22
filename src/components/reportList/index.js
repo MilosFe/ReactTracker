@@ -33,10 +33,10 @@ class ReportList extends Component {
                 {reports.map((report, index) => {
                     return (
                         <CSSTransition key={report.id} timeout={500} classNames={{
-                             enter: styles.reportEnter,
-                             enterActive: styles.reportEnterActive,
-                             exit: styles.reportExit,
-                             exitActive: styles.reportExitActive
+                            enter: styles.reportEnter,
+                            enterActive: styles.reportEnterActive,
+                            exit: styles.reportExit,
+                            exitActive: styles.reportExitActive
                         }}>
                             <Report
                                 report={report}
