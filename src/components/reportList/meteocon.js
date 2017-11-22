@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { find } from 'lodash';
 
@@ -60,9 +61,9 @@ Meteocon.propTypes = {
     weather: PropTypes.shape({
         tempC: PropTypes.number.isRequired,
         isDay: PropTypes.bool.isRequired,
-        windKph: PropTypes.number.isRequired,
-        cloudPc: PropTypes.number.isRequired,
-        precipitation: PropTypes.number.isRequired
+        windKph: PropTypes.number,
+        cloudPc: PropTypes.number,
+        precipitation: PropTypes.number
     })
 };
 

@@ -13,7 +13,10 @@ describe('Report', () => {
             name: 'Montreal',
             country: 'Canada'
         },
-        weather: { tempC }
+        weather: {
+            tempC,
+            isDay: true,
+        }
     });
 
     const renderReport = (size, tempC) => {
