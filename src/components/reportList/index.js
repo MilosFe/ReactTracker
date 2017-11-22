@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import classnames from 'classnames';
 import { random } from 'lodash';
 
@@ -25,7 +26,7 @@ class ReportList extends Component {
         const { reports, removeWeatherReport, isDesktop } = this.props;
 
         return (
-            <div className={classnames({
+            <TransitionGroup className={classnames({
                 [styles.desktopReportListContainer]: isDesktop,
                 [styles.mobileReportListContainer]: !isDesktop
             })}>
@@ -33,16 +34,22 @@ class ReportList extends Component {
                     const key = this.generateKey(report);
 
                     return (
-                        <Report
-                            key={key}
-                            report={report}
-                            cardSize={isDesktop ? 'sm' : 'lg'}
-                            color={this.colors[key]}
-                            onRemove={removeWeatherReport}
-                        />
+                        <CSSTransition key={key} timeout={500} classNames={{
+                             enter: styles.reportEnter,
+                             enterActive: styles.reportEnterActive,
+                             exit: styles.reportExit,
+                             exitActive: styles.reportExitActive
+                        }}>
+                            <Report
+                                report={report}
+                                cardSize={isDesktop ? 'sm' : 'lg'}
+                                color={this.colors[key]}
+                                onRemove={removeWeatherReport}
+                            />
+                        </CSSTransition>
                     );
                 })}
-            </div>
+            </TransitionGroup>
         );
     }
 
