@@ -9,21 +9,47 @@ class Report extends Component {
     render() {
         const { cardSize, color, report: { location, weather } } = this.props;
 
-        return (
-            <div className={classnames(styles.reportContainer, color)}>
-                <Meteocon weather={weather} className={styles.smallIcon} />
-                <div className={styles.detailsContainer}>
-                    <div className={styles.degreesContainer}>
-                        <span className={styles.degrees}>{weather.tempC}</span>
-                        <span className={styles.degreesMarker}>°C</span>
+        // Desktop reports
+        if (cardSize === 'sm') {
+            return (
+                <div className={classnames(styles.smallReportContainer, color)}>
+                    <Meteocon weather={weather} className={styles.smallIcon} />
+                    <div className={styles.detailsContainer}>
+                        <div className={classnames(styles.degreesContainer, styles.degreesContainerSmall)}>
+                            <span className={styles.degreesSmall}>{weather.tempC}</span>
+                            <span className={styles.degreesMarkerSmall}>°C</span>
+                        </div>
+                        <span className={classnames(
+                            styles.cityName,
+                            styles.smallCityName,
+                            styles.ellipsis
+                        )}>
+                            {`${location.name}, ${location.country}`}
+                        </span>
                     </div>
-                    <span className={styles.cityName}>
-                        {`${location.name}, ${location.country}`}
-                    </span>
+                </div>
+            );
+        }
+
+        // Mobile reports
+        return (
+            <div className={classnames(styles.largeReportContainer, color)}>
+                <div className={styles.largeIconAndNameContainer}>
+                    <Meteocon weather={weather} className={styles.largeIcon} />
+                        <span className={classnames(
+                            styles.cityName,
+                            styles.largeCityName,
+                            styles.ellipsis
+                        )}>
+                            {`${location.name}, ${location.country}`}
+                        </span>
+                </div>
+                <div className={classnames(styles.degreesContainer, styles.degreesContainerLarge)}>
+                    <span className={styles.degreesLarge}>{Math.round(weather.tempC)}</span>
+                    <span className={styles.degreesMarkerLarge}>°C</span>
                 </div>
             </div>
         );
-
     }
 }
 
