@@ -70,6 +70,8 @@ class SearchField extends Component {
                 <input
                     {...inputProps}
                     onKeyPress={this.onInputKeyPress.bind(this)}
+                    onFocus={this.onInputFocus.bind(this)}
+                    ref={this.setInputRef.bind(this)(inputProps)}
                 />
                 <span className={classnames({
                     [styles.smallInputPrompt]: isDesktop,
@@ -87,9 +89,24 @@ class SearchField extends Component {
         );
     }
 
+    setInputRef(inputProps) {
+        return (input) => {
+            if (inputProps.ref) {
+                inputProps.ref(input);
+            }
+
+            this.input = input;
+        }
+    }
+
+    onInputFocus() {
+        this.input.select();
+    }
+
     onInputKeyPress(event) {
         if (event.nativeEvent.key === 'Enter') {
-            return this.handleAddReportClick();
+            this.handleAddReportClick();
+            this.input.select();
         }
     }
 
