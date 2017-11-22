@@ -66,7 +66,7 @@ required to avoid using fallback icons too often. Alternatively, they also
 provide a link to their own icons, but this particular project uses
 the [Meteocon][Meteocon] library, as per the designs.
 
-#Known Issues / Future Options
+# Known Issues / Future Options
 
 1. One problem that currently exists is that resizing *between* mobile and desktop
 sizes causes the colors to be recalculated as the parent re-renders. This can
