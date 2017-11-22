@@ -17,6 +17,7 @@
     font-family: inherit;
     border: 1px solid #aaa;
     border-radius: 4px;
+    outline: none;
 }
 
 .inputFocused {

@@ -150,3 +150,21 @@
 .removeIcon:hover {
     filter: invert(75%);
 }
+
+.reportEnter {
+    left: -100%;
+}
+
+.reportEnterActive {
+    left: 0px;
+    transition: left 500ms ease-in;
+}
+
+.reportExit {
+    opacity: 1;
+}
+
+.reportExitActive {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
