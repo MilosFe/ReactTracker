@@ -6,7 +6,7 @@
     "scripts": {
         "build": "webpack",
         "watch": "webpack --watch",
-        "dev": "webpack-dev-server --hot --inline",
+        "dev": "node ./getEnv.js && webpack-dev-server --hot --inline",
         "start": "node ./getEnv.js && npm run lint && npm run test && webpack-dev-server --open",
         "lint": "eslint ./src",
         "test": "mocha-webpack \"test/**/*.spec.js\" -r chai/register-expect -r test/jsdom.js",

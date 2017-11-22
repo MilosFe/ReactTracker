@@ -1,7 +1,8 @@
 var fs = require('fs');
+var path = require('path');
 var prompt = require('prompt');
 
-var ENV_FILE_PATH = './.env';
+var ENV_FILE_PATH = path.resolve(__dirname, '.env');
 
 if (!fs.existsSync(ENV_FILE_PATH)) {
     var schema = {
