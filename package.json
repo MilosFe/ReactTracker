@@ -1,6 +1,6 @@
 {
     "name": "weather-tracker",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Lists weather status in different locations",
     "main": "index.js",
     "scripts": {
