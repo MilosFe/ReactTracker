@@ -10,12 +10,13 @@ export const fetchCurrentWeather = (cityName) => {
     return axios.get(
         `http://api.apixu.com/v1/current.json?key=${process.env.APIXU_KEY}&q=${cityName}`
     ).then((res) => {
-        const { location, current } = res.data;
+        const { location: { name, country, lat, lon }, current } = res.data;
 
         return {
+            id: `${name}_${country}_${lat}_${lon}`,
             location: {
-                name: location.name,
-                country: location.country
+                name: name,
+                country: country,
             },
             weather: {
                 isDay: !!current.is_day,

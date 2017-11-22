@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import classnames from 'classnames';
-import { random } from 'lodash';
+import { get, random } from 'lodash';
 
 import styles from './styles.css';
 import Report from './report';
@@ -31,10 +31,8 @@ class ReportList extends Component {
                 [styles.mobileReportListContainer]: !isDesktop
             })}>
                 {reports.map((report, index) => {
-                    const key = this.generateKey(report);
-
                     return (
-                        <CSSTransition key={key} timeout={500} classNames={{
+                        <CSSTransition key={report.id} timeout={500} classNames={{
                              enter: styles.reportEnter,
                              enterActive: styles.reportEnterActive,
                              exit: styles.reportExit,
@@ -43,7 +41,7 @@ class ReportList extends Component {
                             <Report
                                 report={report}
                                 cardSize={isDesktop ? 'sm' : 'lg'}
-                                color={this.colors[key]}
+                                color={this.colors[report.id]}
                                 onRemove={removeWeatherReport}
                             />
                         </CSSTransition>
@@ -57,31 +55,25 @@ class ReportList extends Component {
         this.calculateColors.bind(this)(reports);
     }
 
-    generateKey(report) {
-        if (!report) { return; }
-
-        return `${report.location.name}${report.location.country}`;
-    }
-
     calculateColors(reports) {
         reverseForEach(reports, (report, index) => {
-            const key = this.generateKey(report);
-            const comparisonReportKey = this.generateKey(reports[index + 1]);
+            const reportId = report.id;
+            const comparisonReportId = get(reports[index + 1], 'id');
 
             const availableColors = COLORS.filter((color) => {
-                return color !== this.colors[comparisonReportKey];
+                return color !== this.colors[comparisonReportId];
             });
 
-            this.colors[key] = this.colors[key] ||
+            this.colors[reportId] = this.colors[reportId] ||
                 availableColors[random(0, availableColors.length - 1)];
         });
     }
 }
 
 ReportList.propTypes = {
-    isDesktop: PropTypes.bool,
-    reports: PropTypes.arrayOf(PropTypes.object),
-    removeWeatherReport: PropTypes.func
+    isDesktop: PropTypes.bool.isRequired,
+    reports: PropTypes.arrayOf(PropTypes.object).isRequired,
+    removeWeatherReport: PropTypes.func.isRequired
 };
 
 export default ReportList;

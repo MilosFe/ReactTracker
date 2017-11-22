@@ -35,14 +35,18 @@ describe('api', () => {
                 data: {
                     location: {
                         name: 'London',
-                        country: 'United Kingdom'
+                        country: 'United Kingdom',
+                        lat: 12.4,
+                        lon: 42.3,
+                        ignoredField: 'whatever'
                     },
                     current: {
                         temp_c: 20,
                         is_day: 1,
                         wind_kph: 4.3,
                         cloud: 10,
-                        precip_mm: 5
+                        precip_mm: 5,
+                        ignoredField: 'whatever'
                     }
                 }
             }));
@@ -56,6 +60,7 @@ describe('api', () => {
             fetchCurrentWeather('London')
                 .then((weatherReport) => {
                     expect(weatherReport).to.deep.equal({
+                        id: 'London_United Kingdom_12.4_42.3',
                         location: {
                             name: 'London',
                             country: 'United Kingdom'
