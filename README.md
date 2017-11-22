@@ -66,6 +66,20 @@ required to avoid using fallback icons too often. Alternatively, they also
 provide a link to their own icons, but this particular project uses
 the [Meteocon][Meteocon] library, as per the designs.
 
+#Known Issues / Future Options
+
+1. One problem that currently exists is that resizing *between* mobile and desktop
+sizes causes the colors to be recalculated as the parent re-renders. This can
+be fixed by moving color management into redux state along with the reports
+themselves but I was trying to avoid putting such specific styling concerns
+into the overall app state. I leave this as a minor issue for now since real
+users would never resize their screens as much as a developer would (if ever),
+but it would be worth addressing.
+
+2. It would be a useful feature to allow the cards to be clicked and either
+open a modal window or expand to show more data, such as the full details
+of the location and more specifics on the weather conditions.
+
 Have fun playing with it, and let me know if you have any questions!
 
 [Apixu]: https://www.apixu.com/
