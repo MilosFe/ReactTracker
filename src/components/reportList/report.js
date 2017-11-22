@@ -27,6 +27,11 @@ class Report extends Component {
                             {`${location.name}, ${location.country}`}
                         </span>
                     </div>
+                    <img
+                        className={styles.removeIcon}
+                        src="/public/removeIcon16.png"
+                        onClick={this.handleRemoveClick.bind(this)}
+                    />
                 </div>
             );
         }
@@ -48,25 +53,37 @@ class Report extends Component {
                     <span className={styles.degreesLarge}>{Math.round(weather.tempC)}</span>
                     <span className={styles.degreesMarkerLarge}>°C</span>
                 </div>
+                <img
+                    className={styles.removeIcon}
+                    src="/public/removeIcon20.png"
+                    onClick={this.handleRemoveClick.bind(this)}
+                />
             </div>
         );
+    }
+
+    handleRemoveClick() {
+        const { report, onRemove } = this.props;
+
+        onRemove(report);
     }
 }
 
 Report.propTypes = {
     cardSize: PropTypes.oneOf(['sm', 'lg']),
     color: PropTypes.string,
+    onRemove: PropTypes.func.isRequired,
     report: PropTypes.shape({
         location: PropTypes.shape({
-            name: PropTypes.string,
-            country: PropTypes.string
+            name: PropTypes.string.isRequired,
+            country: PropTypes.string.isRequired
         }),
         weather: PropTypes.shape({
-            tempC: PropTypes.number,
-            tempF: PropTypes.number,
+            tempC: PropTypes.number.isRequired,
             isDay: PropTypes.bool,
-            condition: PropTypes.string,
-            windKph: PropTypes.number
+            windKph: PropTypes.number,
+            cloudPc: PropTypes.number,
+            precipitation: PropTypes.number
         })
     })
 }

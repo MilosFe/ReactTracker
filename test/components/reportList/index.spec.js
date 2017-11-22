@@ -1,6 +1,7 @@
 import '../../enzymeSetup';
 
 import React from 'react';
+import sinon from 'sinon';
 import { shallow } from 'enzyme';
 
 import ReportList from '../../../src/components/reportList';
@@ -35,7 +36,7 @@ describe('ReportList', () => {
         const reports = generateReports(5);
 
         const wrapper = shallow(
-            <ReportList reports={reports} />
+            <ReportList reports={reports} removeWeatherReport={sinon.stub} />
         );
 
         expect(wrapper.find(Report).length).to.equal(5);
@@ -45,7 +46,7 @@ describe('ReportList', () => {
         const reports = generateReports(1000);
 
         const wrapper = shallow(
-            <ReportList reports={reports} />
+            <ReportList reports={reports} removeWeatherReport={sinon.stub} />
         );
 
         const colors = getColors(wrapper);
@@ -57,7 +58,7 @@ describe('ReportList', () => {
         const reports = generateReports(10);
 
         const wrapper = shallow(
-            <ReportList reports={reports} />
+            <ReportList reports={reports} removeWeatherReport={sinon.stub} />
         );
 
         const colors = getColors(wrapper);
