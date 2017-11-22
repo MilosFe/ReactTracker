@@ -39,32 +39,32 @@ It also comes with a few additional treats beyond the
 main specifications:
 
 - If you add a bunch of weather reports in succession, you'll notice that
-the colors are seemingly random. In fact, they adhere to certain rules:
-  1. All colors are as random as possible.
-  2. No two consecutive reports have the same color, avoiding large patches
-of the same color, especially in the single-column view on mobile.
-  3. Once a color is set for a report, it must persist even when other reports
-are deleted. This can result in clumping of colors depending on how items are
-deleted, but this rule is considered more important than rule #2 for the sake
-of readability.
+the colors are seemingly random. While they are generally as random as
+possible, they adhere to two important rules:
+  + No two consecutive reports have the same color, keeping color sequences
+spread out, especially in the single-column view on mobile.
+  + Once a color is set for a report, it must persist even when other reports
+are deleted. This can result in clumping of colors depending on order of
+deletion, but this rule is considered more important than the first for the
+sake of readability.
 
 - The search box includes an autosuggest using values from Apixu. This can be
 helpful to get differences between identically named cities since Apixu's
 weather api only makes a best (though reasonably accurate) guess at any
-request for a current weather report. Note that this search box does differ
+city names. Note that this search box does differ
 slightly from the designs in that it clears the value after each selection -
 I chose this in order to allow rapidly adding different cities without
 overriding differing browser defaults on handling input fields in
 relation to focus, selections, and click handling.
 
 - The icons shown in each report are not random. They are programmed to check
-the actual weather conditions for that location and give the best
+the actual weather conditions for that location and give an appropriate
 graphical interpretation. Theoretically this could be done more accurately
 by using Apixu's text interpretation of the conditions, but without a publicly
 available list of possible values to be returned, computation on our end is
 required to avoid using fallback icons too often. Alternatively, they also
-provide a link to their own icons, but this particular project needed to use
-the Meteocon[Meteocon] library.
+provide a link to their own icons, but this particular project uses
+the [Meteocon][Meteocon] library, as per the designs.
 
 Have fun playing with it, and let me know if you have any questions!
 
