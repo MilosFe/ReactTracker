@@ -157,7 +157,7 @@
 
 .reportEnterActive {
     left: 0px;
-    transition: left 500ms ease-in;
+    transition: left 500ms ease;
 }
 
 .reportExit {
