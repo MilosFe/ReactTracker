@@ -27,7 +27,8 @@ class ReportList extends Component {
 
         return (
             <div className={classnames({
-                [styles.desktopReportListContainer]: isDesktop
+                [styles.desktopReportListContainer]: isDesktop,
+                [styles.mobileReportListContainer]: !isDesktop
             })}>
                 {reports.map((report, index) => {
                     const key = this.generateKey(report);

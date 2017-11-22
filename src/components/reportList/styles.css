@@ -9,13 +9,35 @@
     width: 80%;
 }
 
-.reportContainer {
+.mobileReportListContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+}
+
+.smallReportContainer {
     display: flex;
     flex-direction: row;
-    margin: 20px 4px 0px 4px;
+    margin: 4px;
     width: 220px;
     height: 75px;
     border-radius: 4px;
+}
+
+.largeReportContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    width: 280px;
+    height: 120px;
+    border-radius: 4px;
+}
+
+.largeIconAndNameContainer {
+    width: 140px;
+    height: 100%;
 }
 
 .darkOrange {
@@ -31,12 +53,17 @@
 }
 
 .meteocon {
-    margin: auto 5px;
     filter: invert(100%);
 }
 
 .smallIcon {
+    margin: auto 5px;
     height: 60px;
+}
+
+.largeIcon {
+    margin: 5px 0 5px 15px;
+    height: 80px;
 }
 
 .detailsContainer {
@@ -47,34 +74,67 @@
 
 .degreesContainer {
     display: flex;
-    margin: 0 auto;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
+    color: var(--offWhite);
 }
 
-.degrees {
-    color: var(--offWhite);
+.degreesContainerSmall {
+    margin: 0 auto;
+}
+
+.degreesContainerLarge {
+    margin: auto;
+}
+
+.degreesSmall {
     font-size: var(--font5);
 }
 
-.degreesMarker {
+.degreesLarge {
+    font-size: var(--font6);
+}
+
+.degreesMarkerSmall {
     line-height: 0;
     position: relative;
     vertical-align: baseline;
     top: 12px;
-    color: var(--offWhite);
     font-size: var(--font-1);
 }
 
+.degreesMarkerLarge {
+    margin-left: 2px;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    top: 24px;
+    font-size: var(--font1);
+    font-weight: 400;
+}
+
 .cityName {
-    margin: 7px auto;
     color: var(--offWhite);
     font-size: var(--font1);
     font-family: 'Lato', sans-serif;
+}
+
+.smallCityName {
+    margin: 7px auto;
     font-weight: 700;
     width: 120px;
+    text-align: center;
+}
+
+.largeCityName {
+    margin-left: 15px;
+    font-weight: 400;
+    width: 140px;
+}
+
+.ellipsis {
+    display: inline-block;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    text-align: center;
 }
