@@ -29,7 +29,7 @@ and they'll prompt you for the key if the file doesn't exist yet.
 
 # Description
 
-This app was built in accordance with the designs [shown here][arbetsprov].
+This app was built in accordance with the designs shown [here][arbetsprov].
 It has been tested for consistency across Chrome, Firefox, and Safari and is
 responsive for all device sizes with a change into Mobile design at 600px
 width. Behind the scenes, it uses React and Redux using the [ducks][ducks]
