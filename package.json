@@ -12,7 +12,7 @@
         "test": "mocha-webpack \"test/**/*.spec.js\" -r chai/register-expect -r test/jsdom.js",
         "test-watch": "mocha-webpack \"test/**/*.spec.js\" -r chai/register-expect -r test/jsdom.js --watch"
     },
-    "author": "Derek Maffett",
+    "author": "Radoman Milos",
     "license": "ISC",
     "dependencies": {
         "axios": "^0.17.1",
